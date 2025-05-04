@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List, Optional
 from shl1 import AssessmentSearchSystem
@@ -11,6 +12,14 @@ app = FastAPI()
 
 mongodb_uri = os.getenv('MONGODB_URI')
 search_system = AssessmentSearchSystem(mongodb_uri)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class Query(BaseModel):
     query: str
