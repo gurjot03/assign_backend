@@ -1,0 +1,10 @@
+streamlit
+pandas
+numpy
+pymongo
+python-dotenv
+sentence-transformers
+google-generativeai
+fastapi
+uvicorn
+pydantic
