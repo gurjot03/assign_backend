@@ -50,7 +50,8 @@ class AssessmentSearchSystem:
         - Job Levels: Target job levels (Entry-level, Mid-Professional, Manager, etc.)
         - Languages: Available languages
         - Assessment Length: Duration of the test ,if nothing is mentioned dont use this field. I query like about an hour then assessment length should be <=60
-        If query like 30-40 mins then assessment length should be 30-40
+        If query like 30-40 mins then assessment length should be 30-40.
+        If query like can be completed in 40 mins then assessment length should be <=40
         
         Always include description of the assessment in the refined query.
         The spoken languages in the query should be kept in the Languages field.
