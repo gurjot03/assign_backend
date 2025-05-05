@@ -181,7 +181,3 @@ class AssessmentSearchSystem:
             print(f"Error during search: {e}")
             return []
 
-def main():
-
-if __name__ == "__main__":
-    main()
