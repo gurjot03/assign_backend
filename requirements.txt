@@ -8,3 +8,4 @@ google-generativeai
 fastapi
 uvicorn
 pydantic
+hf_xet
