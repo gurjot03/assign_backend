@@ -11,7 +11,6 @@ load_dotenv()
 app = FastAPI()
 
 mongodb_uri = os.getenv('MONGODB_URI')
-search_system = AssessmentSearchSystem(mongodb_uri)
 
 app.add_middleware(
     CORSMiddleware,
@@ -42,6 +41,7 @@ async def health_check():
 @app.post("/recommend")
 async def get_recommendations(query: Query):
     try:
+        search_system = AssessmentSearchSystem(mongodb_uri)
         results = search_system.search(query.query, limit=10)
         
         recommended_assessments = []
