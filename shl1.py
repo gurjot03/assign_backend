@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 import google.generativeai as genai
 from sentence_transformers import SentenceTransformer
 import json
+import time
 
 load_dotenv()
 
@@ -20,7 +21,7 @@ class AssessmentSearchSystem:
         api_key = gemini_key
         genai.configure(api_key=api_key)
         self.embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
-        self.gemini_model = genai.GenerativeModel('gemini-1.5-pro')
+        self.gemini_model = genai.GenerativeModel('gemini-2.0-flash')
     
     def create_document_text(self, row):
         document_text = f"""
