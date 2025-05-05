@@ -41,7 +41,7 @@ async def health_check():
 @app.post("/recommend")
 async def get_recommendations(query: Query):
     try:
-        search_system = AssessmentSearchSystem(mongodb_uri)
+        search_system = AssessmentSearchSystem(mongodb_uri = mongodb_uri)
         results = search_system.search(query.query, limit=10)
         
         recommended_assessments = []
